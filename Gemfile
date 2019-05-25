@@ -65,3 +65,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'kaminari'
+gem 'responders', '~> 2.0'
+gem 'twitter-bootstrap-rails'
+gem 'slim-rails'
+gem 'rest-client'
+gem 'byebug'

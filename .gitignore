@@ -31,3 +31,4 @@ public/uploads
 .idea
 .git
 /config/master.key
+/config/credentials.yml.enc

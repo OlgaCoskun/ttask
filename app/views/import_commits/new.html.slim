@@ -1,0 +1,12 @@
+.row
+  h3.text-info.text-center
+    | Import Commits
+= form_tag import_commits_path, method: :post do
+  .form-group
+    = text_field_tag :user_name, '', class: 'form-control', required: "required", placeholder: 'Enter User'
+  .form-group
+    = text_field_tag :repository, '', class: 'form-control', required: "required", placeholder: 'Enter Repository'
+  .form-group
+    = text_field_tag :repository, '', class: 'form-control', required: "required", placeholder: "Enter Author's email"
+  .text-right
+    = submit_tag 'Import', class: 'btn btn-primary text-right'
