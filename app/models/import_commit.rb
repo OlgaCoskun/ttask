@@ -45,10 +45,15 @@ class ImportCommit
   end
 
   def create_commit_for!(user, record)
+    limit_commits!
     user.commits.create(
         sha: record['sha'],
         date: record['commit']['author']['date'],
         message: record['commit']['message']
     )
+  end
+
+  def limit_commits!
+    Commit.first.destroy if Commit.count >= 30
   end
 end

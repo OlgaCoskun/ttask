@@ -1,4 +1,5 @@
 class ImportCommitsController < ApplicationController
+
   def new
   end
 
@@ -20,5 +21,4 @@ class ImportCommitsController < ApplicationController
   def interpolation_options
     { resource_name: 'Request' }
   end
-
 end
