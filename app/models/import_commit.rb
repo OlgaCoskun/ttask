@@ -8,6 +8,7 @@ class ImportCommit
   end
 
   def import_commits!
+    clear_commits!
     begin
       data = data_from
     rescue StandardError => e
@@ -45,7 +46,6 @@ class ImportCommit
   end
 
   def create_commit_for!(user, record)
-    limit_commits!
     user.commits.create(
         sha: record['sha'],
         date: record['commit']['author']['date'],
@@ -53,7 +53,7 @@ class ImportCommit
     )
   end
 
-  def limit_commits!
-    Commit.first.destroy if Commit.count >= 30
+  def clear_commits! # сегодня я понала, что вчера не правильно поняла этот пункт задачи. Кажется надо именно так.
+    User.destroy_all
   end
 end
