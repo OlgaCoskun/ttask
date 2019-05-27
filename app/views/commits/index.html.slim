@@ -1,3 +1,3 @@
-= form_with model: @commit, remote: true, method: :delete, class: "delete" do |f|
+= form_with model: @commit  do |f|
     == render 'common/commits', commits: @commits
-    = link_to 'Delete', @commit
+    = link_to 'Delete', @commit, remote: true, method: :delete, class: "delete"
