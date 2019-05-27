@@ -1,1 +1,3 @@
-== render 'common/commits', commits: @commits
+= form_with model: @commit, remote: true, method: :delete, class: "delete" do |f|
+    == render 'common/commits', commits: @commits
+    = link_to 'Delete', @commit

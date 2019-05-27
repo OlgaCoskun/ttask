@@ -1,14 +1,17 @@
 class CommitsController < ApplicationController
-  before_action :set_user
-
   def index
     @commits = (@user ? @user.commits : Commit).order(:date).page params[:page]
     respond_with(@commits)
   end
 
-  private
+  def destroy
+    @commit = Commit.find(params[:id])
+    @commit = Commit.where(@commit.trash == true)
+    @commit.destroy_all
 
-  def set_user
-    @user = User.find_by(email: params[:email]) if params[:email]
+    respond_to do |format|
+      format.js
+      format.html
+    end
   end
 end

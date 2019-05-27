@@ -1,5 +1,8 @@
 tr
   td.col-lg-1.col-md-1.col-sm-1.col-xs-1.bord
+    = link_to commits_path(@commit, commit_id: commit.id), method: :delete do
+      = check_box_tag 'commits_ids[]', commit.id, onchange: 'toggle_trash();'
+  td.col-lg-1.col-md-1.col-sm-1.col-xs-1.bord
     = commit.date.to_time.to_formatted_s(:long)
   td.col-lg-2.col-md-3.col-sm-3.col-xs-3.bord
     = commit.user.name
@@ -9,3 +12,7 @@ tr
     = commit.sha
   td.col-lg-4.col-md-4.col-sm-4.col-xs-5.bord
     = commit.message
+
+
+javascript:
+    toggle_trash();
