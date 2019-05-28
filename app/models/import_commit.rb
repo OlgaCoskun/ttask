@@ -53,7 +53,7 @@ class ImportCommit
     )
   end
 
-  def clear_commits! # сегодня я понала, что вчера не правильно поняла этот пункт задачи. Кажется надо именно так.
+  def clear_commits!
     User.destroy_all
   end
 end

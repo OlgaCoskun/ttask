@@ -32,3 +32,4 @@ public/uploads
 .git
 /config/master.key
 /config/credentials.yml.enc
+/config/database.yml
