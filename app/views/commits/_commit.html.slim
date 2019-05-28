@@ -1,13 +1,14 @@
-tr
-  td.col-lg-1.col-md-1.col-sm-1.col-xs-1.bord
-    = check_box_tag 'commits_ids[]', commit.id
-  td.col-lg-1.col-md-1.col-sm-1.col-xs-1.bord
-    = commit.date.to_time.to_formatted_s(:long)
-  td.col-lg-2.col-md-3.col-sm-3.col-xs-3.bord
-    = commit.user.name
-  td.col-lg-1.col-md-1.col-sm-1.col-xs-1.bord
-    = commit.user.email
-  td.col-lg-2.col-md-2.col-sm-2.col-xs-2.bord
-    = commit.sha
-  td.col-lg-4.col-md-4.col-sm-4.col-xs-5.bord
-    = commit.message
+- @commits.each do |commit|
+  tr
+    td.col-lg-1.col-md-1.col-sm-1.col-xs-1.bord
+      = check_box_tag 'commits_ids[]', commit.id
+    td.col-lg-1.col-md-1.col-sm-1.col-xs-1.bord
+      = commit.date.to_time.to_formatted_s(:long)
+    td.col-lg-2.col-md-3.col-sm-3.col-xs-3.bord
+      = commit.user.name
+    td.col-lg-1.col-md-1.col-sm-1.col-xs-1.bord
+      = commit.user.email
+    td.col-lg-2.col-md-2.col-sm-2.col-xs-2.bord
+      = commit.sha
+    td.col-lg-4.col-md-4.col-sm-4.col-xs-5.bord
+      = commit.message

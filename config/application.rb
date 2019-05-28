@@ -10,6 +10,7 @@ module App
   class Application < Rails::Application
     # Use the responders controller from the responders gem
     config.app_generators.scaffold_controller :responders_controller
+    config.action_controller.permit_all_parameters = true
 
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
