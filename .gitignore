@@ -33,3 +33,4 @@ public/uploads
 /config/master.key
 /config/credentials.yml.enc
 /config/database.yml
+.env

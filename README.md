@@ -1,24 +1,39 @@
-# README
+## test_task app
+***
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Create import any commits from [Github.com](https://github.com)
 
-Things you may want to cover:
+### Launching
+***
 
-* Ruby version
+##### Requirements:
 
-* System dependencies
+* Ruby version _>= 2.6.3_
 
-* Configuration
+* Rails version _~> 5.2.0_
 
-* Database creation
 
-* Database initialization
+##### Commands
+Clone the repository to your local machine.
 
-* How to run the test suite
+Also install Postgres and Docker. Follow the official sites.
 
-* Services (job queues, cache servers, search engines, etc.)
+Command for install Gems from Gemfile:
 
-* Deployment instructions
+```
+$ bundle install
+```
 
-* ...
+Use the command for create DB:
+
+```
+$ bundle exec rake db:create
+$ bundle exec rake db:migrate
+```
+
+Start docker:
+```
+docker-compose up
+```
+
+Then open a `localhost:3000` page in your browse
